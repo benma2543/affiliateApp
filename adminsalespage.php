@@ -61,9 +61,9 @@ function getURL()
 		</style>
 	</head>
 	<body class="antialiased">
-		<div id="wrapper" class="d-flex"> <?php require_once("admin_menu_sidenav.php"); ?>
-			<div id="content-wrapper" class="d-flex flex-column flex-grow-1">
-				<div id="content" class="flex-grow-1">
+		<div class="wrapper"> <?php require_once("admin_menu_sidenav.php"); ?>
+			<div class="page-wrapper">
+				<div class="page-body">
 					<div class="container-xl py-4">
 						<div class="form-row">
 							<div class="col-12">

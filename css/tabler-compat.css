@@ -1,13 +1,5 @@
 /* Tabler compatibility - replaces SB Admin 2 custom utilities */
 
-/* Toast positioning */
-.toast-container-top-right {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    z-index: 1090;
-}
-
 /* DataTables inside Tabler cards */
 .dataTables_wrapper .dataTables_length,
 .dataTables_wrapper .dataTables_filter,
@@ -21,14 +13,6 @@
 .navbar-brand-img {
     max-height: 3rem;
     width: auto;
-}
-
-/* Ensure sidebar links are readable */
-.navbar-dark .navbar-nav .nav-link {
-    color: rgba(255,255,255,0.85);
-}
-.navbar-dark .navbar-nav .nav-link:hover {
-    color: #fff;
 }
 
 /* Sticky footer */
@@ -68,42 +52,15 @@
     color: #fff;
 }
 
-/* Page layout compat */
-body.antialiased {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-#wrapper {
-    display: flex;
-    flex: 1;
-    min-height: 100vh;
-    width: 100%;
-    overflow: hidden;
-}
-
-/* Sidebar — never grow, never shrink below its defined width */
-#wrapper > aside.navbar {
-    flex: 0 0 220px;
-    width: 220px;
-    min-width: 220px;
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    overflow-y: auto;
-    /* Ensure it stays in flow on all screen sizes */
-    z-index: 100;
-}
-
-#content-wrapper {
+/* page-wrapper fills the space next to the sidebar */
+.page-wrapper {
     display: flex;
     flex-direction: column;
     flex: 1 1 0;
-    min-width: 0;   /* critical — prevents flex child from overflowing */
-    overflow-x: hidden;
+    min-width: 0;
+    min-height: 100vh;
 }
 
-#content {
+.page-body {
     flex: 1;
 }

@@ -72,13 +72,13 @@ foreach ($results as $result) {
 <body class="antialiased">
 
     <!-- Page Wrapper -->
-    <div id="wrapper" class="d-flex">
+    <div class="wrapper">
 
        <?php require_once("admin_menu_sidenav.php"); ?>
         <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column flex-grow-1">
+        <div class="page-wrapper">
             <!-- Main Content -->
-            <div id="content" class="flex-grow-1">
+            <div class="page-body">
                 <!-- Begin Page Content -->
                 <div class="container-xl py-4">
                     <!-- Page Heading -->

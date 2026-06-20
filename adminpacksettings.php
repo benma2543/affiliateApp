@@ -50,9 +50,9 @@ function getURL()
 		</style>
 	</head>
 	<body class="antialiased">
-		<div id="wrapper" class="d-flex"> <?php require_once("admin_menu_sidenav.php"); ?>
-			<div id="content-wrapper" class="d-flex flex-column flex-grow-1">
-				<div id="content" class="flex-grow-1">
+		<div class="wrapper"> <?php require_once("admin_menu_sidenav.php"); ?>
+			<div class="page-wrapper">
+				<div class="page-body">
 					<div class="container-xl py-4">
 					<h2 class="page-title">Pack Settings for "<?php echo $sitename ?>" </h2>
 					<div class="text-muted mb-3">You can change your pack settings here.</div>
