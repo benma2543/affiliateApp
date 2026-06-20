@@ -9,7 +9,7 @@ if ($add3==0){$showar="display:none;";}else{$showar="";}
 if ($add4==0){$showads="display:none;";}else{$showads="";}
 if ($add5==0){$showpage="display:none;";}else{$showpage="";}
 ?>
-<aside class="navbar navbar-vertical navbar-expand-lg navbar-dark bg-dark" style="min-width:220px;">
+<aside class="navbar navbar-vertical navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#admin-navbar-menu">
             <span class="navbar-toggler-icon"></span>

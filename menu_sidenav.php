@@ -26,7 +26,7 @@ switch ($menucolorselect){
     case 7: $sidebarBg = "bg-white";   $sidebarTheme = "navbar-light"; break;
 }
 ?>
-<aside class="navbar navbar-vertical navbar-expand-lg <?php echo $sidebarTheme; ?> <?php echo $sidebarBg; ?>" style="min-width:220px;">
+<aside class="navbar navbar-vertical navbar-expand-lg <?php echo $sidebarTheme; ?> <?php echo $sidebarBg; ?>">
     <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
             <span class="navbar-toggler-icon"></span>

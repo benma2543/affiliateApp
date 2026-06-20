@@ -69,16 +69,41 @@
 }
 
 /* Page layout compat */
+body.antialiased {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 #wrapper {
     display: flex;
+    flex: 1;
     min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
 }
+
+/* Sidebar — never grow, never shrink below its defined width */
+#wrapper > aside.navbar {
+    flex: 0 0 220px;
+    width: 220px;
+    min-width: 220px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    /* Ensure it stays in flow on all screen sizes */
+    z-index: 100;
+}
+
 #content-wrapper {
     display: flex;
     flex-direction: column;
-    flex: 1;
+    flex: 1 1 0;
+    min-width: 0;   /* critical — prevents flex child from overflowing */
     overflow-x: hidden;
 }
+
 #content {
     flex: 1;
 }
