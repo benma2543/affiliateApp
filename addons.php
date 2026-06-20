@@ -1,0 +1,1 @@
+<?php $addons="|WarriorPlus / JVZoo addon|Salespage Plugin|Autoresponder Addon|Ad Plugin|Credits Pack addon"; ?>
