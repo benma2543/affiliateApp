@@ -60,38 +60,33 @@ foreach ($results as $result) {
 
     <title><?php echo $sitename; ?></title>
 
-    <!-- Custom fonts for this template -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="libs/sbadmin2/css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/css/tabler.min.css">
+    <link rel="stylesheet" href="css/tabler-compat.css">
 
     <!-- Custom styles for this page -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.bootstrap4.min.css" integrity="sha512-PT0RvABaDhDQugEbpNMwgYBCnGCiTZMh9yOzUsJHDgl/dMhD9yjHAwoumnUk3JydV3QTcIkNDuN40CJxik5+WQ==" crossorigin=	"anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
 
 </head>
 
-<body id="page-top">
+<body class="antialiased">
 
     <!-- Page Wrapper -->
-    <div id="wrapper">
+    <div id="wrapper" class="d-flex">
 
        <?php require_once("admin_menu_sidenav.php"); ?>
         <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content-wrapper" class="d-flex flex-column flex-grow-1">
             <!-- Main Content -->
-            <div id="content">
+            <div id="content" class="flex-grow-1">
                 <!-- Begin Page Content -->
-                <div class="container-fluid" style="margin-top:50px;"	>
+                <div class="container-xl py-4">
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Sales</h1>
-                    <p class="mb-4">You can manage view your credit sales here.</p>
+                    <h2 class="page-title">Sales</h2>
+                    <div class="text-muted mb-3">You can manage view your credit sales here.</div>
 
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
+                    <div class="card shadow-sm">
+                        <div class="card-header">
 			
                         </div>
                         <div class="card-body">
@@ -147,11 +142,9 @@ foreach ($results as $result) {
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <?php echo $footer; ?>
-                    </div>
+            <footer class="footer sticky-footer bg-white">
+                <div class="container text-center py-2">
+                    <?php echo $footer; ?>
                 </div>
             </footer>
             <!-- End of Footer -->
@@ -163,7 +156,7 @@ foreach ($results as $result) {
     <!-- End of Page Wrapper -->
 
     <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
+    <a class="scroll-to-top" href="#">
         <i class="fas fa-angle-up"></i>
     </a>
 
@@ -174,13 +167,11 @@ foreach ($results as $result) {
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="logoutLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
                     <a class="btn btn-primary" href="adminlogout.php">Logout</a>
                 </div>
             </div>
@@ -190,11 +181,9 @@ foreach ($results as $result) {
 
 	<div class="toast bg-gray-200" role="alert" aria-live="assertive" aria-atomic="true" data-delay="5000" style="position: absolute; top: 1rem; right: 1rem;" id="banToast">
 	  <div class="toast-header bg-gray-400">
-		<strong class="mr-auto"><span id="banToastHeader"></span></strong>
+		<strong class="me-auto"><span id="banToastHeader"></span></strong>
 
-		<button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-		  <span aria-hidden="true">&times;</span>
-		</button>
+		<button type="button" class="btn-close ms-2 mb-1" data-bs-dismiss="toast" aria-label="Close"></button>
 	  </div>
 	  <div class="toast-body">
 		<span id="banToastBody"></span>
@@ -202,18 +191,16 @@ foreach ($results as $result) {
 	</div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js" integrity="sha512-igl8WEUuas9k5dtnhKqyyld6TzzRjvMqLC79jkgT3z02FvJyHAuUtyemm/P/jYSne1xwFI06ezQxEwweaiV7VA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/js/tabler.min.js"></script>
     <!-- Core plugin JavaScript-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js" integrity="sha512-0QbL0ph8Tc8g5bLhfVzSqxe9GERORsKhIn1IrpxDAgUsbBGz/V7iSav2zzW325XGd1OMLdL4UiqRJj702IeqnQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="libs/sbadmin2/js/sb-admin-2.min.js"></script>
 
-		<!-- Page level plugins -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js" integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/dataTables.bootstrap4.min.js" integrity="sha512-OQlawZneA7zzfI6B1n1tjUuo3C5mtYuAWpQdg+iI9mkDoo7iFzTqnQHf+K5ThOWNJ9AbXL4+ZDwH7ykySPQc+A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<!-- Page level plugins -->
+	<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
 
 <script>
 $(document).ready(function() {
@@ -224,7 +211,7 @@ $(document).ready(function() {
 });
 
 $('#adminLogout').click(function(){
-	$('#logoutModal').modal('show');
+	new bootstrap.Modal(document.getElementById('logoutModal')).show();
 
 });
 

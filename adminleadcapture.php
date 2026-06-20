@@ -942,11 +942,9 @@ if (!isset($addon_email_artype)){$addon_email_artype==999;}
 		<meta name="description" content="">
 		<meta name="author" content="">
 		<title> <?php echo $sitename; ?> </title>
-		<!-- Custom fonts for this template -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-		<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-		<!-- Custom styles for this template -->
-		<link href="libs/sbadmin2/css/sb-admin-2.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/css/tabler.min.css">
+		<link rel="stylesheet" href="css/tabler-compat.css">
 		<style>
 			.topgap {
 				margin-top: 15px;
@@ -956,21 +954,16 @@ if (!isset($addon_email_artype)){$addon_email_artype==999;}
 			}
 		</style>
 	</head>
-	<body id="page-top">
-		<!-- Page Wrapper -->
-		<div id="wrapper"> <?php require_once("admin_menu_sidenav.php"); ?>
-			<!-- Content Wrapper -->
-			<div id="content-wrapper" class="d-flex flex-column">
-				<!-- Main Content -->
-				<div id="content">
-					<!-- Begin Page Content -->
-					<div class="container-fluid" style="margin-top:50px;">
-						<!-- Page Heading -->
-						<h1 class="h3 mb-2 text-gray-800">Lead Capture Settings for "<?php echo $sitename ?>" </h1>
+	<body class="antialiased">
+		<div id="wrapper" class="d-flex"> <?php require_once("admin_menu_sidenav.php"); ?>
+			<div id="content-wrapper" class="d-flex flex-column flex-grow-1">
+				<div id="content" class="flex-grow-1">
+					<div class="container-xl py-4">
+						<h2 class="page-title">Lead Capture Settings for "<?php echo $sitename ?>" </h2>
 						<p class="mb-4">Select where to send new leads here.</p>
-						<div class="card shadow mb-4">
-							<div class="card-header py-3">
-								<h6 class="m-0 font-weight-bold text-primary">Lead Capture Settings</h6>
+						<div class="card shadow-sm">
+							<div class="card-header">
+								<h5 class="card-title mb-0">Lead Capture Settings</h5>
 							</div>
 							<div class="card-body">
 								
@@ -1876,19 +1869,12 @@ echo($sectionout_demio);
 				
 				
 			<!-- End of Main Content -->
-			<!-- Footer -->
-			<footer class="sticky-footer bg-white">
-				<div class="container my-auto">
-					<div class="copyright text-center my-auto"><?php echo $footer; ?></div>
-				</div>
+			<footer class="footer sticky-footer bg-white">
+				<div class="container text-center py-2"><?php echo $footer; ?></div>
 			</footer>
-			<!-- End of Footer -->
 		</div>
-		<!-- End of Content Wrapper -->
 		</div>
-		<!-- End of Page Wrapper -->
-		<!-- Scroll to Top Button-->
-		<a class="scroll-to-top rounded" href="#page-top">
+		<a class="scroll-to-top" href="#">
 			<i class="fas fa-angle-up"></i>
 		</a>
 		<!-- Logout Modal-->
@@ -1897,13 +1883,13 @@ echo($sectionout_demio);
 				<div class="modal-content">
 					<div class="modal-header">
 						<h5 class="modal-title" id="logoutLabel">Ready to Leave?</h5>
-						<button class="close" type="button" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">×</span>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+							
 						</button>
 					</div>
 					<div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
 					<div class="modal-footer">
-						<button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+						<button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
 						<a class="btn btn-primary" href="adminlogout.php">Logout</a>
 					</div>
 				</div>
@@ -1911,11 +1897,11 @@ echo($sectionout_demio);
 		</div>
 		<div class="toast bg-gray-200" role="alert" aria-live="assertive" aria-atomic="true" data-delay="5000" style="position: absolute; top: 1rem; right: 1rem;" id="toast">
 			<div class="toast-header bg-gray-400">
-				<strong class="mr-auto">
+				<strong class="me-auto">
 					<span id="toastHeader"></span>
 				</strong>
-				<button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
+				<button type="button" class="ms-2 mb-1 close" data-bs-dismiss="toast" aria-label="Close">
+					
 				</button>
 			</div>
 			<div class="toast-body">
@@ -1923,12 +1909,8 @@ echo($sectionout_demio);
 			</div>
 		</div>
 		<!-- Bootstrap core JavaScript-->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.min.js" integrity="sha512-7rusk8kGPFynZWu26OKbTeI+QPoYchtxsmPeBqkHIEXJxeun4yJ4ISYe7C6sz9wdxeE1Gk3VxsIWgCZTc+vX3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-		<!-- Core plugin JavaScript-->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js" integrity="sha512-0QbL0ph8Tc8g5bLhfVzSqxe9GERORsKhIn1IrpxDAgUsbBGz/V7iSav2zzW325XGd1OMLdL4UiqRJj702IeqnQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-		<!-- Custom scripts for all pages-->
-		<script src="libs/sbadmin2/js/sb-admin-2.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/js/tabler.min.js"></script>
 		<!-- Page level plugins -->
 <script>
 $(document).ready(function() {

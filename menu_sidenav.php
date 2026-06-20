@@ -1,114 +1,81 @@
-<!-- Sidebar -->
 <?php
 $adnumber=0;
 for ($i = 1; $i <= 5; $i++) {
     $varName = "menutext" . $i;
     $$varName = "";
-	$varName = "menulink" . $i;
+    $varName = "menulink" . $i;
     $$varName = "";
 }
 if (file_exists("add4.php")){require("add4.php");}else{$add4=0;}
 if ($add4==1){
-	require("configmenuads.php");
+    require("configmenuads.php");
 }
 require("menucolor.php");
-$menutextcolor="100";
-$iconstyle="";
-$togglecolor="";
-$menufontstyle="";
+
+// Map the old SB Admin 2 color select to a Tabler sidebar theme class
+$sidebarTheme = "navbar-dark";
+$sidebarBg    = "bg-blue-lt";
 switch ($menucolorselect){
-	case 0:
-		$iconstyle="color:rgba(255,255,255,.5)";
-		break;
-	case 1:
-		$iconstyle="color:rgba(255,255,255,.5)";
-		break;
-	case 2:
-		$iconstyle="color:rgba(255,255,255,.6)";
-		break;
-	case 3:
-		$iconstyle="color:rgba(255,255,255,.6)";
-		break;	
-	case 4:
-		$iconstyle="color:rgba(255,255,255,.6)";
-		$menufontstyle="font-weight:700;";
-		break;
-	case 5:
-		$iconstyle="color:rgba(255,255,255,.7)";
-		break;
-	case 7:
-		$menutextcolor="900";
-		$iconstyle="color:rgba(0,0,0,.5)";
-		$togglecolor="background-color:#b9b9b9;";
-		break;
-}	
-
-
- 
- ?>
-        <ul class="navbar-nav <?php echo $menucolor; ?> sidebar sidebar-dark accordion" id="accordionSidebar">
-
-            <!-- Sidebar - Brand -->
-            <a class="d-flex align-items-center justify-content-center" style="text-align:center; margin-top:10px;" href="#">
-                <div class="sidebar-brand-icon" >
-					<img src="img/logo.png?<?php echo time(); ?>" style="max-width:90%; height:auto;">
-					 
-                </div>
-				
-                
-            </a>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
-
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
-                <a class="nav-link" href="projects.php">
-					<i class="fas fa-clipboard-list" style="<?php echo $iconstyle; ?>"></i>
-                    <span class="text-gray-<?php echo $menutextcolor; ?>" style="<?php echo $menufontstyle; ?>">Manage Projects</span></a>
-            </li>
-			<li class="nav-item">
-                <a class="nav-link" href="newproject.php?id=0">
-                    <i class="fas fa-rocket" style="<?php echo $iconstyle; ?>"></i>
-                    <span class="text-gray-<?php echo $menutextcolor; ?>" style="<?php echo $menufontstyle; ?>">New Project</span></a>
-            </li>				
-			<li class="nav-item">
-                <a class="nav-link" href="categories.php">
-                    <i class="fas fa-folder-plus" style="<?php echo $iconstyle; ?>"></i>
-                    <span class="text-gray-<?php echo $menutextcolor; ?>" style="<?php echo $menufontstyle; ?>">Manage Categories</span></a>
-            </li>			
-			<li class="nav-item">
-                <a class="nav-link" href="usersettings.php">
-                    <i class="fas fa-cog" style="<?php echo $iconstyle; ?>"></i>
-                    <span class="text-gray-<?php echo $menutextcolor; ?>" style="<?php echo $menufontstyle; ?>">Settings</span></a>
-            </li>
-			
+    case 0: $sidebarBg = "bg-blue";    break;
+    case 1: $sidebarBg = "bg-secondary"; break;
+    case 2: $sidebarBg = "bg-green";   break;
+    case 3: $sidebarBg = "bg-cyan";    break;
+    case 4: $sidebarBg = "bg-yellow";  $sidebarTheme = "navbar-light"; break;
+    case 5: $sidebarBg = "bg-red";     break;
+    case 6: $sidebarBg = "bg-dark";    break;
+    case 7: $sidebarBg = "bg-white";   $sidebarTheme = "navbar-light"; break;
+}
+?>
+<aside class="navbar navbar-vertical navbar-expand-lg <?php echo $sidebarTheme; ?> <?php echo $sidebarBg; ?>" style="min-width:220px;">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-brand py-3 text-center">
+            <img src="img/logo.png?<?php echo time(); ?>" class="navbar-brand-img" alt="Logo" style="max-width:140px; max-height:60px; width:auto; height:auto;">
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-menu">
+            <ul class="navbar-nav pt-lg-3">
+                <li class="nav-item">
+                    <a class="nav-link" href="projects.php">
+                        <span class="nav-link-icon"><i class="fas fa-clipboard-list"></i></span>
+                        <span class="nav-link-title">Manage Projects</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="newproject.php?id=0">
+                        <span class="nav-link-icon"><i class="fas fa-rocket"></i></span>
+                        <span class="nav-link-title">New Project</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="categories.php">
+                        <span class="nav-link-icon"><i class="fas fa-folder-plus"></i></span>
+                        <span class="nav-link-title">Manage Categories</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="usersettings.php">
+                        <span class="nav-link-icon"><i class="fas fa-cog"></i></span>
+                        <span class="nav-link-title">Settings</span>
+                    </a>
+                </li>
 <?php
-
 for ($i = 1; $i <= 5; $i++) {
     $menutext = "menutext" . $i;
- 	$menulink = "menulink" . $i;
-    if ($$menutext!=""){
-		$menuout='<li class="nav-item"><a class="nav-link" target="_BLANK" href="'.$$menulink.'"><i class="fas fa-rocket" style="'.$iconstyle.'"></i><span class="text-gray-'.$menutextcolor.'" style="'.$menufontstyle.'"> '.$$menutext.'</span></a></li>';
-		echo $menuout;
-	}
+    $menulink = "menulink" . $i;
+    if ($$menutext != "") {
+        echo '<li class="nav-item"><a class="nav-link" target="_BLANK" href="'.$$menulink.'"><span class="nav-link-icon"><i class="fas fa-rocket"></i></span><span class="nav-link-title">'.$$menutext.'</span></a></li>';
+    }
 }
-
-?>			
-			<li class="nav-item" style="cursor:pointer;">
-                <a class="nav-link" href="logout.php">
-                    <i class="fas fa-sign-out-alt" style="<?php echo $iconstyle; ?>"></i>
-                    <span class="text-gray-<?php echo $menutextcolor; ?>" style="<?php echo $menufontstyle; ?>">Logout</span></a>
-            </li>
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-        
-        
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" style="<?php echo $togglecolor; ?>" id="sidebarToggle"></button>
-            </div>
-
-        </ul>
-        <!-- End of Sidebar -->
+?>
+                <li class="nav-item">
+                    <a class="nav-link" href="logout.php">
+                        <span class="nav-link-icon"><i class="fas fa-sign-out-alt"></i></span>
+                        <span class="nav-link-title">Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</aside>

@@ -118,17 +118,10 @@ if ($add2==1){
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
     <title><?php echo $sitename; ?></title>
 
-    <!-- Custom fonts for this template -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-
     <!-- Custom styles for this template -->
-    <link href="libs/sbadmin2/css/sb-admin-2.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this page -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.39.0/css/tempusdominus-bootstrap-4.min.css" integrity="sha512-3JRrEUwaCkFUBLK1N8HehwQgu8e23jTH4np5NHOmQOobuC4ROQxFwFgBLTnhcnQRMs84muMh0PnnwXlPq5MGjg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/css/tabler.min.css">
+    <link rel="stylesheet" href="css/tabler-compat.css">
 	
 	<style>
 		.topgap {
@@ -202,20 +195,14 @@ if ($add2==1){
 
 </head>
 
-<body id="page-top">
+<body class="antialiased">
 
-    <!-- Page Wrapper -->
-    <div id="wrapper">
+    <div id="wrapper" class="d-flex">
 
        <?php require_once("menu_sidenav.php"); ?>
-        <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column">
-
-            <!-- Main Content -->
-            <div id="content">
-
-                <!-- Begin Page Content -->
-                <div class="container-fluid" style="margin-top:50px;"	>
+        <div id="content-wrapper" class="d-flex flex-column flex-grow-1">
+            <div id="content" class="flex-grow-1">
+                <div class="container-xl py-4">
 
                     <!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800">Project Creation / Editing</h1>
@@ -256,10 +243,10 @@ if ($add2==1){
 							
 							<textarea id="p1_content" style="display:none;" ><?php echo($p1_content); ?></textarea>
 							
-							<button id="saveProject" class="btn btn-primary btn-icon-split float-right" style="margin-right:5px;" <?php if ($id==0){echo 'disabled="disabled"';} ?>><span class="icon text-white-50"><i class="fas fa-save"></i></span><span class="text">Save All</span></button>
+							<button id="saveProject" class="btn btn-primary btn-icon-split float-end" style="margin-right:5px;" <?php if ($id==0){echo 'disabled="disabled"';} ?>><span class="icon text-white-50"><i class="fas fa-save"></i></span><span class="text">Save All</span></button>
 
-							<a href="projects.php" id="cancelButton" class="btn btn-danger btn-icon-split float-right" style="margin-right:5px;"><span class="icon text-white-50"><i class="fas fa-window-close"></i></span><span class="text">Cancel</span></a>
-							<span class="float-left form-inline" style="<?php echo $showcredits; ?>">Credits Left:&nbsp;&nbsp;<div class="form-control fake-input" id="usercredits" readonly ><?php echo $usercredits; ?></div><input id="userid" type="text" style="display:none;" value="<?php echo $userid; ?>"></span>							
+							<a href="projects.php" id="cancelButton" class="btn btn-danger btn-icon-split float-end" style="margin-right:5px;"><span class="icon text-white-50"><i class="fas fa-window-close"></i></span><span class="text">Cancel</span></a>
+							<span class="float-start form-inline" style="<?php echo $showcredits; ?>">Credits Left:&nbsp;&nbsp;<div class="form-control fake-input" id="usercredits" readonly ><?php echo $usercredits; ?></div><input id="userid" type="text" style="display:none;" value="<?php echo $userid; ?>"></span>							
                         </div>
                         <div class="card-body">
 							<span id="step-1" style="<?php if($id!=0){echo 'display:none;';} ?>">
@@ -296,7 +283,7 @@ if ($add2==1){
 								<div class="col-4" style="">
 									<label for="">&nbsp;</label><br>
 									<button id="btnCut" class="btn btn-info btn-icon-split " style="margin-right:5px;"><span class="icon text-white-50"><i class="fas fa-cut"></i></span><span class="text">Auto Cut</span></button>
-									<button id="btnLock" disabled="disabled" class="btn btn-success btn-icon-split float-right" style="margin-right:5px;"><span class="icon text-white-50"><i class="fas fa-forward"></i></span><span class="text">Lock</span></button>
+									<button id="btnLock" disabled="disabled" class="btn btn-success btn-icon-split float-end" style="margin-right:5px;"><span class="icon text-white-50"><i class="fas fa-forward"></i></span><span class="text">Lock</span></button>
 									<button id="btnClear" class="btn btn-danger btn-icon-split " style="margin-right:5px;"><span class="icon text-white-50"><i class="fas fa-trash-alt"></i></span><span class="text">Clear</span></button>
 								</div>
 							</div>
@@ -431,7 +418,7 @@ if ($add2==1){
 								</div>								
 								<div class="col-2">
 									<label>&nbsp;</label><br>
-									<button id="p1-generate" class="btn btn-success btn-icon-split float-right generate" style="margin-right:5px;"><span class="icon text-white-50"><i class="fas fa-sync-alt"></i></span><span class="text">Generate</span></button>										
+									<button id="p1-generate" class="btn btn-success btn-icon-split float-end generate" style="margin-right:5px;"><span class="icon text-white-50"><i class="fas fa-sync-alt"></i></span><span class="text">Generate</span></button>										
 								</div>
 								
 							</div>							
@@ -455,16 +442,16 @@ if ($add2==1){
 											<div class="col-12">
 												<div id="p1_docHtml" class="googoose-wrapper" style="display:none;"></div>
 	
-												<div class="btn-group float-right" style="margin-right:10px">
-													<button type="button" class="btn btn-primary btn-icon-split float-right"><span class="icon text-white-50"><i class="fas fa-file-export"></i></span><span class="text">Export</span></button>
-													<button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"></button>
+												<div class="btn-group float-end" style="margin-right:10px">
+													<button type="button" class="btn btn-primary btn-icon-split float-end"><span class="icon text-white-50"><i class="fas fa-file-export"></i></span><span class="text">Export</span></button>
+													<button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown"></button>
 													<div class="dropdown-menu">
 														<a class="dropdown-item exportbutton" data-id="doc" data-section="p1" href="#">DOC File</a>
 														<a class="dropdown-item exportbutton" data-id="txt" data-section="p1" href="#">Text File</a>
 														<a class="dropdown-item exportbutton" data-id="pdf" data-section="p1" href="#">PDF File</a>
 													</div>
 												</div>
-												<button id="p1" class="btn btn-info btn-icon-split float-right copybutton" style="margin-right:5px;"><span class="icon text-white-50"><i class="fas fa-copy"></i></span><span class="text">Copy</span></button>
+												<button id="p1" class="btn btn-info btn-icon-split float-end copybutton" style="margin-right:5px;"><span class="icon text-white-50"><i class="fas fa-copy"></i></span><span class="text">Copy</span></button>
 											</div>
 										</div>
 			
@@ -483,24 +470,16 @@ if ($add2==1){
             </div>
             <!-- End of Main Content -->
 
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <?php echo $footer; ?>
-                    </div>
+            <footer class="footer sticky-footer bg-white">
+                <div class="container text-center py-2">
+                    <?php echo $footer; ?>
                 </div>
             </footer>
-            <!-- End of Footer -->
 
         </div>
-        <!-- End of Content Wrapper -->
-
     </div>
-    <!-- End of Page Wrapper -->
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
+    <a class="scroll-to-top" href="#">
         <i class="fas fa-angle-up"></i>
     </a>
 
@@ -511,9 +490,7 @@ if ($add2==1){
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Select Bonus Number <span id="dispBonusNum"></span></h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
 					<div class="row">
@@ -557,8 +534,8 @@ if ($add2==1){
 				
 				</div>
                 <div class="modal-footer">
-					<button class="btn btn-danger btn-icon-split" style="margin-right:5px;" data-dismiss="modal"><span class="icon text-white-50"><i class="fas fa-window-close"></i></span><span class="text">Cancel</span></button>
-					<button id="btnSelectBonus" class="btn btn-primary btn-icon-split" style="margin-right:5px;" data-dismiss="modal"><span class="icon text-white-50"><i class="fas fa-check-square"></i></span><span class="text">Select</span></button>
+					<button class="btn btn-danger btn-icon-split" style="margin-right:5px;" data-bs-dismiss="modal"><span class="icon text-white-50"><i class="fas fa-window-close"></i></span><span class="text">Cancel</span></button>
+					<button id="btnSelectBonus" class="btn btn-primary btn-icon-split" style="margin-right:5px;" data-bs-dismiss="modal"><span class="icon text-white-50"><i class="fas fa-check-square"></i></span><span class="text">Select</span></button>
                 </div>
             </div>
         </div>
@@ -572,13 +549,11 @@ if ($add2==1){
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="s2ErrorLabel">AI Error</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">There has been a problem connecting to the AI. This could be because the service is currently too busy.  Please try again.</div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">OK</button>
+                    <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">OK</button>
                 </div>
             </div>
         </div>
@@ -592,13 +567,11 @@ if ($add2==1){
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="userkeyLabel">API Key Error</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">There has been a problem connecting to the AI. Your OpenAI API key is either missing or invalid - Please set it correctly in your Settings dashboard.</div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">OK</button>
+                    <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">OK</button>
                 </div>
             </div>
         </div>
@@ -611,9 +584,7 @@ if ($add2==1){
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="addcatLabel">Add New Category</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
 					<div class="row">
@@ -624,35 +595,26 @@ if ($add2==1){
 					</div>
 				</div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary btn-icon-split" data-dismiss="modal"><span class="icon text-white-50"><i class="fas fa-window-close"></i></span><span class="text">Cancel</span></button>
-					<button type="button" class="btn btn-primary btn-icon-split" onclick="addNewCat();" data-dismiss="modal"><span class="icon text-white-50"><i class="fas fa-plus-circle"></i></span><span class="text">Add Category</span></button>
+                    <button type="button" class="btn btn-secondary btn-icon-split" data-bs-dismiss="modal"><span class="icon text-white-50"><i class="fas fa-window-close"></i></span><span class="text">Cancel</span></button>
+					<button type="button" class="btn btn-primary btn-icon-split" onclick="addNewCat();" data-bs-dismiss="modal"><span class="icon text-white-50"><i class="fas fa-plus-circle"></i></span><span class="text">Add Category</span></button>
                 </div>
             </div>
         </div>
     </div>	
 
 
-	<div class="toast bg-gray-400" role="alert" aria-live="assertive" aria-atomic="true" data-delay="5000" style="position: absolute; top: 1rem; right: 1rem;" id="generalToast">
-	  <div class="toast-header bg-gray-700">
-		<strong class="mr-auto"><span id="generalToastHeader" style="color:#FFF;"></span></strong>
-		<button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-		  <span aria-hidden="true" style="color:#FFF;">&times;</span>
-		</button>
+	<div class="toast-container position-fixed top-0 end-0 p-3" style="z-index:1090;">
+	<div class="toast" role="alert" aria-live="assertive" aria-atomic="true" id="generalToast">
+	  <div class="toast-header">
+		<strong class="me-auto" id="generalToastHeader"></strong>
+		<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
 	  </div>
-	  <div class="toast-body">
-		<span id="generalToastBody" style="color:#000"></span>
-	 </div>
+	  <div class="toast-body" id="generalToastBody"></div>
+	</div>
 	</div>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.bundle.min.js" integrity="sha512-igl8WEUuas9k5dtnhKqyyld6TzzRjvMqLC79jkgT3z02FvJyHAuUtyemm/P/jYSne1xwFI06ezQxEwweaiV7VA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!-- Core plugin JavaScript-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js" integrity="sha512-0QbL0ph8Tc8g5bLhfVzSqxe9GERORsKhIn1IrpxDAgUsbBGz/V7iSav2zzW325XGd1OMLdL4UiqRJj702IeqnQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="libs/sbadmin2/js/sb-admin-2.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/js/tabler.min.js"></script>
 
 	<!-- Page level plugins -->
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/aadel112/googoose@master/jquery.googoose.js"></script>
@@ -668,7 +630,7 @@ if ($add2==1){
 
 function selectBonus(bonusnumber){
 	$('#dispBonusNum').text(bonusnumber);
-	$('#bonusModal').modal('show');
+	new bootstrap.Modal(document.getElementById('bonusModal')).show();
 	$('#bonus_cat').trigger('change');
 }
 
@@ -931,14 +893,14 @@ function callAi(){
                 } catch (error) {
                     console.error("The response is not valid JSON");
                     showOverlay(false);
-                    $('#s2errorModal').modal('show');
+                    new bootstrap.Modal(document.getElementById('s2errorModal')).show();
                     resolve();
                     return;  // ← STOP here, don't fall through
                 }
             
                 if (errortest == "NOUSERKEY") {
                     showOverlay(false);
-                    $('#userkeyModal').modal('show');
+                    new bootstrap.Modal(document.getElementById('userkeyModal')).show();
                     resolve();
                     return;  // ← STOP here
                 }
@@ -947,7 +909,7 @@ function callAi(){
                 if (!errortest.choices || !errortest.choices[0]) {
                     console.log("Unexpected API response:", response);
                     showOverlay(false);
-                    $('#s2errorModal').modal('show');
+                    new bootstrap.Modal(document.getElementById('s2errorModal')).show();
                     resolve();
                     return;
                 }
@@ -1031,11 +993,12 @@ function callAi(){
 function generalToast(header,body){
 			$('#generalToastHeader').text(header);
 			$('#generalToastBody').text(body);
-			$('#generalToast').toast('show');
+			var toast = new bootstrap.Toast(document.getElementById('generalToast'), {delay: 5000});
+			toast.show();
 }
 
 $('.addcatbutton').click(function(){
-	$('#addcatModal').modal('show');
+	new bootstrap.Modal(document.getElementById('addcatModal')).show();
 });
 
 function addNewCat(whichsection){
@@ -1304,7 +1267,7 @@ function getResponseAI(language, tone, panel_input, mode){
                 if (!errortest.choices || !errortest.choices[0]) {
                     console.log("Unexpected API response:", response);
                     showOverlay(false);
-                    $('#s2errorModal').modal('show');
+                    new bootstrap.Modal(document.getElementById('s2errorModal')).show();
                     reject("No choices in response");
                     return;
                 }

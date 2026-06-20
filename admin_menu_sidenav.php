@@ -8,77 +8,72 @@ if ($add2==0){$showcredits="display:none;";}else{$showcredits="";}
 if ($add3==0){$showar="display:none;";}else{$showar="";}
 if ($add4==0){$showads="display:none;";}else{$showads="";}
 if ($add5==0){$showpage="display:none;";}else{$showpage="";}
-
 ?>
-        <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
-
-            <a class="d-flex align-items-center justify-content-center" style="text-align:center; margin-top:10px;" href="#">
-                <div class="sidebar-brand-icon" >
-					<img src="img/logo.png?<?php echo time(); ?>" style="max-width:90%; height:auto;">
-                </div>
-				
-                
-            </a>
-
-
-            <hr class="sidebar-divider my-0">
-
-
-            <li class="nav-item">
-                <a class="nav-link" href="adminusers.php">
-                    <i class="fas fa-users"></i>
-                    <span>Users</span></a>
-            </li>
-            <li class="nav-item" style="<?php echo $showcredits; ?>">
-                <a class="nav-link" href="adminsales.php">
-                    <i class="fas fa-file-invoice-dollar"></i>
-                    <span>Credit Sales</span></a>
-            </li>			
-			<li class="nav-item">
-                <a class="nav-link" href="adminsettings.php">
-                    <i class="fas fa-cog"></i>
-                    <span>Settings</span></a>
-            </li>
-			<li class="nav-item" style="<?php echo $showcredits; ?>">
-                <a class="nav-link" href="adminpacksettings.php">
-                    <i class="fas fa-comment-dollar"></i>
-                    <span>Pack Settings</span></a>
-            </li>
-
-			<li class="nav-item" style="<?php echo $showads; ?>">
-                <a class="nav-link" href="adminadsettings.php">
-                    <i class="fas fa-ad"></i>
-                    <span>Ad Settings</span></a>
-            </li>
-            
-			<li class="nav-item" style="<?php echo $showar; ?>">
-                <a class="nav-link" href="adminarintegrations.php">
-                    <i class="fas fa-cogs"></i>
-                    <span>AR Integrations</span></a>
-            </li>
-			<li class="nav-item" style="<?php echo $showar; ?>">
-                <a class="nav-link" href="adminleadcapture.php">
-                    <i class="fas fa-envelope"></i>
-                    <span>Lead Capture</span></a>            
-			</li>
-			<li class="nav-item" style="<?php echo $showpage; ?>">
-                <a class="nav-link" href="adminsalespage.php">
-                    <i class="fab fa-html5"></i>
-                    <span>Salespage</span></a>            
-			</li>
-
-			
-			<li class="nav-item" style="cursor:pointer;">
-                <a class="nav-link" id="adminLogout">
-                    <i class="fas fa-sign-out-alt"></i>
-                    <span>Logout Admin</span></a>
-            </li>
-
-            <hr class="sidebar-divider">
-
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
-
-        </ul>
-        
+<aside class="navbar navbar-vertical navbar-expand-lg navbar-dark bg-dark" style="min-width:220px;">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#admin-navbar-menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-brand py-3 text-center">
+            <img src="img/logo.png?<?php echo time(); ?>" class="navbar-brand-img" alt="Logo" style="max-width:140px; max-height:60px; width:auto; height:auto;">
+        </div>
+        <div class="collapse navbar-collapse" id="admin-navbar-menu">
+            <ul class="navbar-nav pt-lg-3">
+                <li class="nav-item">
+                    <a class="nav-link" href="adminusers.php">
+                        <span class="nav-link-icon"><i class="fas fa-users"></i></span>
+                        <span class="nav-link-title">Users</span>
+                    </a>
+                </li>
+                <li class="nav-item" style="<?php echo $showcredits; ?>">
+                    <a class="nav-link" href="adminsales.php">
+                        <span class="nav-link-icon"><i class="fas fa-file-invoice-dollar"></i></span>
+                        <span class="nav-link-title">Credit Sales</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="adminsettings.php">
+                        <span class="nav-link-icon"><i class="fas fa-cog"></i></span>
+                        <span class="nav-link-title">Settings</span>
+                    </a>
+                </li>
+                <li class="nav-item" style="<?php echo $showcredits; ?>">
+                    <a class="nav-link" href="adminpacksettings.php">
+                        <span class="nav-link-icon"><i class="fas fa-comment-dollar"></i></span>
+                        <span class="nav-link-title">Pack Settings</span>
+                    </a>
+                </li>
+                <li class="nav-item" style="<?php echo $showads; ?>">
+                    <a class="nav-link" href="adminadsettings.php">
+                        <span class="nav-link-icon"><i class="fas fa-ad"></i></span>
+                        <span class="nav-link-title">Ad Settings</span>
+                    </a>
+                </li>
+                <li class="nav-item" style="<?php echo $showar; ?>">
+                    <a class="nav-link" href="adminarintegrations.php">
+                        <span class="nav-link-icon"><i class="fas fa-cogs"></i></span>
+                        <span class="nav-link-title">AR Integrations</span>
+                    </a>
+                </li>
+                <li class="nav-item" style="<?php echo $showar; ?>">
+                    <a class="nav-link" href="adminleadcapture.php">
+                        <span class="nav-link-icon"><i class="fas fa-envelope"></i></span>
+                        <span class="nav-link-title">Lead Capture</span>
+                    </a>
+                </li>
+                <li class="nav-item" style="<?php echo $showpage; ?>">
+                    <a class="nav-link" href="adminsalespage.php">
+                        <span class="nav-link-icon"><i class="fab fa-html5"></i></span>
+                        <span class="nav-link-title">Salespage</span>
+                    </a>
+                </li>
+                <li class="nav-item" style="cursor:pointer;">
+                    <a class="nav-link" id="adminLogout">
+                        <span class="nav-link-icon"><i class="fas fa-sign-out-alt"></i></span>
+                        <span class="nav-link-title">Logout Admin</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</aside>

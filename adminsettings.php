@@ -59,11 +59,9 @@ if ($thishost=="yoursassapp.com" || $thishost=="exclusivesoftwarelab.online" || 
 		<meta name="description" content="">
 		<meta name="author" content="">
 		<title> <?php echo $sitename; ?> </title>
-		<!-- Custom fonts for this template -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-		<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-		<!-- Custom styles for this template -->
-		<link href="libs/sbadmin2/css/sb-admin-2.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/css/tabler.min.css">
+		<link rel="stylesheet" href="css/tabler-compat.css">
 		<style>
 			.topgap {
 				margin-top: 15px;
@@ -73,22 +71,21 @@ if ($thishost=="yoursassapp.com" || $thishost=="exclusivesoftwarelab.online" || 
 			}
 		</style>
 	</head>
-	<body id="page-top">
-		<!-- Page Wrapper -->
-		<div id="wrapper"> <?php require_once("admin_menu_sidenav.php"); ?>
-			<!-- Content Wrapper -->
-			<div id="content-wrapper" class="d-flex flex-column">
-				<!-- Main Content -->
-				<div id="content">
-					<!-- Begin Page Content -->
-					<div class="container-fluid" style="margin-top:50px;">
-						<!-- Page Heading -->
-						<h1 class="h3 mb-2 text-gray-800">Settings for "<?php echo $sitename ?>" </h1>
-						<p class="mb-4">You can change your settings here.</p>
+	<body class="antialiased">
+		<div id="wrapper" class="d-flex"> <?php require_once("admin_menu_sidenav.php"); ?>
+			<div id="content-wrapper" class="d-flex flex-column flex-grow-1">
+				<div id="content" class="flex-grow-1">
+					<div class="container-xl py-4">
+						<div class="d-flex align-items-center mb-3">
+							<div>
+								<h2 class="page-title">Settings for "<?php echo $sitename ?>"</h2>
+								<div class="text-muted">You can change your settings here.</div>
+							</div>
+						</div>
 						<input id="savemessage" value="<?php echo $savemessage ?>" style="display:none;">
-						<div class="card shadow mb-4">
-							<div class="card-header py-3">
-								<h6 class="m-0 font-weight-bold text-primary">Settings</h6>
+						<div class="card shadow-sm">
+							<div class="card-header">
+								<h5 class="card-title mb-0">Settings</h5>
 							</div>
 							<input id="add2" style="display:none;" value="<?php echo $add2; ?>">
 							<div class="card-body">
@@ -98,7 +95,7 @@ if ($thishost=="yoursassapp.com" || $thishost=="exclusivesoftwarelab.online" || 
 									</div>
 								</div>
 								<form id="settingsForm">
-									<div class="form-row topgap">
+									<div class="row g-3 topgap">
 										<div class="col-3">
 											<label>Terms Link : </label>
 											<input type="text" class="form-control" placeholder="Terms Link (if required)" name="termslink" value="<?php echo $termslink ?>">
@@ -116,7 +113,7 @@ if ($thishost=="yoursassapp.com" || $thishost=="exclusivesoftwarelab.online" || 
 											<input type="text" class="form-control" placeholder="Logout redirect URL (usually login.php)" name="logoutredirect" value="<?php echo $logoutredirect ?>">
 										</div>
 									</div>
-									<div class="form-row topgap">
+									<div class="row g-3 topgap">
 										<div class="col-3">
 											<label>Admin Username : </label>
 											<input type="text" class="form-control" placeholder="" required="required" name="adminuser" value="<?php echo $adminuser ?>">
@@ -134,7 +131,7 @@ if ($thishost=="yoursassapp.com" || $thishost=="exclusivesoftwarelab.online" || 
 											<input type="text" class="form-control" placeholder="Enter your key" name="jvzkey" value="<?php echo $jvzkey; ?>">
 										</div>	
 									</div>
-									<div class="form-row topgap">
+									<div class="row g-3 topgap">
 										<div class="col-1">
 											<span id="mkmode1" style="<?php if ($add2==1){echo 'display:none;';} ?>">
 												<label>API Key Mode : </label>
@@ -229,7 +226,7 @@ if ($thishost=="yoursassapp.com" || $thishost=="exclusivesoftwarelab.online" || 
 												<i class="fas fa-save"></i> Save All</button>
 										</div>										
 									</div>
-									<div class="form-row topgap">
+									<div class="row g-3 topgap">
 										<div class="col-3" style="display:none;">
 											<label>AI Engine : </label>
 											<select class="form-control" name="aiengine">
@@ -290,64 +287,46 @@ if ($thishost=="yoursassapp.com" || $thishost=="exclusivesoftwarelab.online" || 
 					<!-- /.container-fluid -->
 					</div>
 				</div>
-			<!-- End of Main Content -->
 			<!-- Footer -->
-			<footer class="sticky-footer bg-white">
-				<div class="container my-auto">
-					<div class="copyright text-center my-auto"><?php echo $footer; ?></div>
-				</div>
+			<footer class="footer sticky-footer bg-white">
+				<div class="container text-center py-2"><?php echo $footer; ?></div>
 			</footer>
-			<!-- End of Footer -->
 		</div>
-		<!-- End of Content Wrapper -->
 		</div>
-		<!-- End of Page Wrapper -->
 		<!-- Scroll to Top Button-->
-		<a class="scroll-to-top rounded" href="#page-top">
+		<a class="scroll-to-top" href="#">
 			<i class="fas fa-angle-up"></i>
 		</a>
 		<!-- Logout Modal-->
-		<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutLabel" aria-hidden="true">
-			<div class="modal-dialog" role="document">
+		<div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutLabel" aria-hidden="true">
+			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
 						<h5 class="modal-title" id="logoutLabel">Ready to Leave?</h5>
-						<button class="close" type="button" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">×</span>
-						</button>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
 					<div class="modal-footer">
-						<button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+						<button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
 						<a class="btn btn-primary" href="adminlogout.php">Logout</a>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="toast bg-gray-200" role="alert" aria-live="assertive" aria-atomic="true" data-delay="5000" style="position: absolute; top: 1rem; right: 1rem;" id="toast">
-			<div class="toast-header bg-gray-400">
-				<strong class="mr-auto">
-					<span id="toastHeader"></span>
-				</strong>
-				<button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div class="toast-body">
-				<span id="toastBody"></span>
+		<div class="toast-container position-fixed top-0 end-0 p-3" style="z-index:1090;">
+			<div id="toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+				<div class="toast-header">
+					<strong class="me-auto" id="toastHeader"></strong>
+					<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+				</div>
+				<div class="toast-body" id="toastBody"></div>
 			</div>
 		</div>
-		<!-- Bootstrap core JavaScript-->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.min.js" integrity="sha512-7rusk8kGPFynZWu26OKbTeI+QPoYchtxsmPeBqkHIEXJxeun4yJ4ISYe7C6sz9wdxeE1Gk3VxsIWgCZTc+vX3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-		<!-- Core plugin JavaScript-->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js" integrity="sha512-0QbL0ph8Tc8g5bLhfVzSqxe9GERORsKhIn1IrpxDAgUsbBGz/V7iSav2zzW325XGd1OMLdL4UiqRJj702IeqnQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-		<!-- Custom scripts for all pages-->
-		<script src="libs/sbadmin2/js/sb-admin-2.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/js/tabler.min.js"></script>
 
-		<!-- Page level plugins -->
 		<script>
-			
+
 			$('#presetai').change(function(){
 				var presetai=$(this).val();
 				if (presetai==0){
@@ -362,7 +341,8 @@ if ($thishost=="yoursassapp.com" || $thishost=="exclusivesoftwarelab.online" || 
 				if($('#savemessage').val()=='1'){
 					$('#toastHeader').text('SAVED');
 					$('#toastBody').text('Your settings have been saved!');
-					$('#toast').toast('show');	
+					var toast = new bootstrap.Toast(document.getElementById('toast'), {delay: 5000});
+					toast.show();
 				}
 				document.body.addEventListener('change', function(event) {
 					if (event.target.id === 'logoUploadButton') {
@@ -446,7 +426,8 @@ if ($thishost=="yoursassapp.com" || $thishost=="exclusivesoftwarelab.online" || 
 				}
 			});
 			$('#adminLogout').click(function() {
-				$('#logoutModal').modal('show');
+				var modal = new bootstrap.Modal(document.getElementById('logoutModal'));
+				modal.show();
 			});
 			
 			$('#saveSettings').click(function(){
@@ -464,7 +445,8 @@ if ($thishost=="yoursassapp.com" || $thishost=="exclusivesoftwarelab.online" || 
 							if ($('#add2').val()==1){$('#masterkeymode').prop('disabled', true);}
 							$('#toastHeader').text('ERROR');
 							$('#toastBody').text('Settings NOT saved - You must have both an admin username and password!');
-							$('#toast').toast('show');				
+							var toast = new bootstrap.Toast(document.getElementById('toast'), {delay: 5000});
+							toast.show();
 						}
 						if (response=="ADMINCHANGE") {
 							if ($('#add2').val()==1){$('#masterkeymode').prop('disabled', true);}
